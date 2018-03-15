@@ -24,6 +24,17 @@ public class Book {
 	@ManyToMany
 	@JoinTable(name="author_book", joinColumns = @JoinColumn(name="book_id"), inverseJoinColumns = @JoinColumn(name="author_id"))
 	Set<Author> authors = new HashSet<>();
+	
+	
+	public Book(String title, String isbn) {
+		super();
+		this.title = title;
+		this.isbn = isbn;
+	}
+
+	public Book() {
+		super();
+	}
 
 	public Long getId() {
 		return id;
