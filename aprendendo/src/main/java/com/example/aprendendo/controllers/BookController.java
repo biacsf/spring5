@@ -15,7 +15,6 @@ public class BookController {
 	private BookDAO bookDAO;
 	
 	@Autowired
-	@Qualifier("techBookServiceImpl")
 	private BookService bookService;
 
 	@RequestMapping("/books")
