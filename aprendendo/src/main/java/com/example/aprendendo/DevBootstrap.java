@@ -1,5 +1,6 @@
 package com.example.aprendendo;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
@@ -11,7 +12,9 @@ import com.example.aprendendo.repository.BookDAO;
 
 @Component
 public class DevBootstrap implements ApplicationListener<ContextRefreshedEvent> {
+	@Autowired
 	private AuthorDAO authorDAO;
+	@Autowired
 	private BookDAO bookDAO;
 
 	@Override
