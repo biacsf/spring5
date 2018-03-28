@@ -1,21 +1,11 @@
 package com.example.aprendendo;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
 
-import com.example.aprendendo.model.Author;
-import com.example.aprendendo.model.Book;
-import com.example.aprendendo.repository.AuthorDAO;
-import com.example.aprendendo.repository.BookDAO;
-
 @Component
 public class DevBootstrap implements ApplicationListener<ContextRefreshedEvent> {
-	@Autowired
-	private AuthorDAO authorDAO;
-	@Autowired
-	private BookDAO bookDAO;
 
 	@Override
 	public void onApplicationEvent(ContextRefreshedEvent contextRefreshedEvent) {
@@ -25,8 +15,8 @@ public class DevBootstrap implements ApplicationListener<ContextRefreshedEvent> 
 	private void initData() {
 
 		// Eric
-		Author eric = new Author("Eric", "Evans");
-		Book ddd = new Book("Domain Driven Design", "1234");
+		/*Author eric = new Author("Eric", "Evans");
+		Notes ddd = new Notes("Domain Driven Design", "1234");
 		eric.getBooks().add(ddd);
 		ddd.getAuthors().add(eric);
 
@@ -35,11 +25,11 @@ public class DevBootstrap implements ApplicationListener<ContextRefreshedEvent> 
 
 		// Rod
 		Author rod = new Author("Rod", "Johnson");
-		Book noEJB = new Book("J2EE Development without EJB", "23444");
+		Notes noEJB = new Notes("J2EE Development without EJB", "23444");
 		rod.getBooks().add(noEJB);
 		noEJB.getAuthors().add(rod);
 
 		authorDAO.save(rod);
-		bookDAO.save(noEJB);
+		bookDAO.save(noEJB);*/
 	}
 }
